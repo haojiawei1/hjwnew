@@ -1,0 +1,88 @@
+.xiangmu{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.mui-off-canvas-left{
+	background:url(../img/xm.png);
+}
+.xiangmu ul{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 1rem;
+	left: 0rem;
+}
+.xiangmu ul li{
+	padding-left: 1rem;
+	width: 100%;
+	height: 1.5rem;
+	line-height:1.5rem;
+	text-align: left;
+	font-size: 0.5rem;
+	color: #fff;
+	font-family:苹方;
+}
+.xiangmu span{
+   font-size: 0.5rem;
+   margin-right: 0.2rem;
+}
+.xiangmu .icon-xinwen1{
+	color: #B65151;
+}
+.xiangmu .icon-weidingyue{
+	color: #725045;
+}
+.xiangmu .icon-tupian{
+	color: #5591C7;
+}
+.xiangmu .icon-shipin{
+	color: #4E863B;
+}
+.xiangmu .icon-tubiao2yinlediantai{
+	color: #C65587;
+}
+.xiangmu .dj{
+	background:rgba(182,81,81,0.1);
+}
+
+
+/*denglu*/
+
+.denglu{
+	width: 100%;
+	height: 100%;
+	background: url(../img/xm.png);
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 100%;
+}
+.sange{
+	width: 100%;
+	box-sizing: border-box;
+}
+.sange ul{
+	width: 100%;
+	height: 2rem;
+}
+.sange ul li{
+	width: 33.3333%;
+	float: left;
+	/*background: red;*/
+	position: relative;
+}
+.sange img{
+	width: 50%;
+	text-align: center;
+	line-height: 2rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0.1rem;
+	margin: auto;
+}

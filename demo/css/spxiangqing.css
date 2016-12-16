@@ -1,0 +1,173 @@
+.sp{
+	width: 100%;
+	height: 4rem;
+	background: red;
+	position: relative;
+	background: url(../img/tiaoshan.jpg)no-repeat;
+	background-size: cover;
+}
+.sp .concle{
+	  width: 1.2rem;
+     height: 1.2rem;
+	position: absolute;
+	opacity: 0.8;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.5);
+	line-height: 1.2rem;
+	text-align:center;
+	font-size: 0.5rem;
+	color: #fff;
+}
+.sp .fanhui{
+	position: absolute;
+	top: 0.2rem;
+	left: 0.2rem;
+	font-size: 0.5rem;
+	color: #fff;
+}
+.liebiao{
+	width: 100%;
+	padding: 0.2rem;
+	box-sizing: border-box;
+	background: #fff;
+}
+.liebiaotop{
+	width: 100%;
+	height: 1.2rem;
+}
+.liebiaotop span{
+	font-size: 0.36rem;
+}
+.guangzhu{
+	width: 100%;
+	height: 1rem;
+	position: relative;
+}
+.zuozhe{
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background: url(../img/作者.jpg);
+	background-size: cover;
+}
+.zuozhejj{
+	width: 60%;
+	position: absolute;
+	top: 0;
+	left: 1.3rem;
+}
+.mingzi{
+	font-size: 0.36rem;
+}
+.fenx{
+	margin-top: 0.1rem;
+	font-size: 0.2rem;
+	color: #ccc;
+}
+.gz{
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: -0.2rem;
+	/*background: red;*/
+}
+.gz p{
+	width: 100%;
+	height: 70%;
+	border-radius: 0.1rem;
+	border: 1px solid blue;
+	line-height: 0.7rem;
+	text-align: center;
+	font-size: 0.3rem;
+	box-sizing: border-box;
+	color: #3879D9;
+}
+.list{
+        	width:100%;
+        }
+        .list ul{
+        	width: 100%;
+        	background: #fff;
+        }
+        .list ul li{
+        	width: 100%;
+        	height: 2.5rem;
+            /*border: 1px solid #000;*/
+            position: relative;
+            border-bottom: 1px solid #ccc;
+        }
+        .listbody{
+        	width: 95%;
+        	height: 1.9rem;
+        	/*background: red;*/
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	right: 0;
+        	bottom: 0;
+        	margin: auto;
+        	/*border-bottom: 1px solid #ccc;*/
+        }
+         .listbody .img2{
+        	background: url(img/list1.png);
+        	background-size: cover;
+        }
+ .listimg{
+        	width: 2.1rem;
+        	height: 1.7rem;
+        	position: absolute;
+        	left: 0rem;
+        	top: 0.1rem;
+        	background: url(img/20407168_203509147000_2.jpg);
+        	background-size: cover;
+        }
+        .listimg img{
+        	width: 100%;
+        	height: 100%;
+        }
+        .biaoti{
+        	font-size: 0.4rem;
+        	position: absolute;
+        	left: 2.4rem;
+        	top: 0.2rem;
+        	color: #000;
+        }
+        .neirong{
+        	font-size: 0.3rem;
+        	position: absolute;
+        	left: 2.4rem;
+        	top: 0.6rem;
+        	color: #808080;
+        }
+        #footer input{
+        	width:65%;
+        	height: 0.5rem;
+        	position: absolute;
+        	top: 0.3rem;
+        	left: 0.2rem;
+        	font-family: "黑体";
+        	font-size: 0.4rem;
+        	padding-left: 0.2rem;
+        	color: #999999;
+        	border: 0;
+        }
+       #footer .zz{
+        	position: absolute;
+        	right:1.3rem;
+        	top: 0.3rem;
+        	font-size: 0.6rem;
+        	color: #999;
+        }
+        #footer .sc{
+        	position: absolute;
+        	right: 0.3rem;
+        	top: 0.2rem;
+        	font-size: 0.6rem;
+        	color: #999;
+        }

@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>iScroll demo: scrollbars</title>
+<!--<script src="js/jquery-3.1.0.js"></script>-->
+<script src="js/zepto.min.js"></script>
+<script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+     <script src="js/iscroll.js"></script>
+    <script src="js/swiper-3.4.0.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/fot.js"></script>
+    <link rel="stylesheet" href="css/tuijian.css" />
+    <link rel="stylesheet" href="js/swiper-3.4.0.min.css">
+    <link rel="stylesheet" href="css/index1.css" />
+    <link rel="stylesheet" href="css/pe.css" />
+    <link rel="stylesheet" href="font_3y0w2e3ygw91wcdi/iconfont.css" />
+    <link rel="stylesheet" href="font_xy4ylzpuod730udi/iconfont.css" />
+    <link rel="stylesheet" href="font_o6uxqx3pgr38r529/iconfont.css" />
+    <link rel="stylesheet" href="css/shiping.css" />
+    <script>
+    function resize(originSize,type){
+    var type=type||"x";
+    if(type=="x"){
+    var widths=document.documentElement.clientWidth;
+    var scale=widths/originSize*100;
+    }else if(type=="y"){
+    var heights=document.documentElement.clientHeight;
+    var scale=heights/originSize*100;
+    }
+    document.getElementsByTagName("html")[0].style.fontSize=scale+"px"
+    }
+    </script>
+
+
+<script type="text/javascript">
+var myScroll;
+function loaded () {
+	setTimeout(function(){
+			myScroll = new IScroll('#wrapper', {
+		mouseWheel: true,
+		 click:true,
+
+
+	});
+	},100)
+var myScroll1;
+	setTimeout(function(){
+			myScroll1 = new IScroll('#wrapper1', {
+		mouseWheel: true,
+		 click:true,
+//		 snap:true,
+//momentum:false,
+//hScrollbar:false,
+//vScrollbar: false
+
+	});
+	},100)
+	var myScroll2;
+	setTimeout(function(){
+			myScroll2 = new IScroll('#wrapper2', {
+		mouseWheel: true,
+		 click:true,
+//		 snap:true,
+//momentum:false,
+//hScrollbar:false,
+//vScrollbar: false
+
+	});
+	},100)
+	var myScroll3;
+	setTimeout(function(){
+			myScroll3 = new IScroll('#wrapper3', {
+		mouseWheel: true,
+		 click:true,
+//		 snap:true,
+//momentum:false,
+//hScrollbar:false,
+//vScrollbar: false
+
+	});
+	},100)
+}
+
+
+
+
+//myScroll.on('scrollEnd',function(){
+//     if(this.y>=0){
+//up1()
+//     }
+//
+//     if(this.y==this.scrollMaxY){
+//     	down1()
+//     }
+//})
+//
+//	function up1(){
+//			up.style.display="block"
+//////     	myScroll.refresh();
+//     	setTimeout(function(){
+//     		$("<li>new'+i'</li>").prependTo(ul);
+//     	 up.style.display="none"
+//     	},3000)
+//	}
+//	function down1(){
+//		
+//		down.style.display="block"
+//myScroll.refresh();
+//     	setTimeout(function(){
+//     		$("<li>new'+i'</li>").appendTo(ul);
+//     		
+//     	 down.style.display="none"
+////     	
+////     	 
+//     	},2000)
+//	}
+
+
+//}
+
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+</script>
+<script>
+  window.onload=function(){
+  	var fotlogin=document.getElementsByClassName('fotlogin');
+  	for(var k=0;k<=fotlogin.length;k++){
+  		fotlogin[k].addEventListener('tap',function(){
+   	window.location.href="login.html";
+   })
+  	}
+   
+  }
+</script>
+
+<style type="text/css">
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	-ms-touch-action: none;
+}
+#se{
+        	height:1.1rem;
+        	background:#E6E6E6;
+        	position: fixed;
+        	top: 1.3rem;
+        	left: 0;
+        	z-index: 1000;
+            width: 100%;
+            font-size:20px;
+            box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+            line-height: 1.1rem;
+}
+        #se .swiper-slide {
+                padding: 0 20px;
+                width: auto;
+      }
+        #se .btn{
+        	color: red;
+        	font-size: 22px;
+        }
+        .top{
+       	width: 100%;
+       	height: 1.3rem;
+       	background: red;
+       	position:fixed;
+       	left: 0;
+       	z-index: 1000;
+       	
+       }
+       .wy{
+       	width: 1rem;
+       	height: 100%;
+       	margin: 0 auto;
+       	line-height: 1.8rem;
+       }
+       .wy img{
+       	width: 1rem;
+       }
+       .more{
+       	width: 0.5rem;
+       	height: 0.5rem;
+       	float: left;
+       	font-size: 0.7rem;
+       	color: #fff;
+       	position: absolute;
+       	top: 0.5rem;
+       	left: 0.2rem;
+       	background:rgba(0,0,0,0);
+       }
+       .login{
+       	display: block;
+       	width: 0.5rem;
+       	height: 0.5rem;
+       	float: right;
+       	font-size: 0.7rem;
+       	color: #fff;
+       	position: absolute;
+       	top: 0.5rem;
+       	right: 0.3rem;
+       	text-decoration: none;
+       }
+       .swiper{
+       	width: 100%;
+       	/*height: 100%;*/
+       	line-height: 0.5rem;
+       }
+       /*.swiper .swiper-wrapper{
+       	height: 1140px;
+       }*/
+      .swiper .swiper-slide{
+      	height: 100px;
+      }
+       .swiper .swiper-slide-active{
+       	height:auto;
+       }
+       /*.swiper .swiper-slide-next{
+       	height: 100%;
+       }*/
+      .sw{
+	         width: 100%;
+	          height: 2.8rem;
+         }
+         .sw img{
+         	width: 100%;
+         	height: 2.8rem;
+         }
+         .list{
+        	width:100%;
+        }
+        .list ul{
+        	width: 100%;
+        	background: #fff;
+        }
+        .list ul li{
+        	width: 100%;
+        	height: 2.5rem;
+            /*border: 1px solid #000;*/
+            position: relative;
+            border-bottom: 1px solid #ccc;
+        }
+        .listbody{
+        	width: 95%;
+        	height: 1.9rem;
+        	/*background: red;*/
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	right: 0;
+        	bottom: 0;
+        	margin: auto;
+        	/*border-bottom: 1px solid #ccc;*/
+        }
+         .listbody .img2{
+        	background: url(img/list1.png);
+        	background-size: cover;
+        }
+         .listbody .img3{
+        	background: url(img/list2.png);
+        	background-size: cover;
+        }
+          .listbody .img4{
+        	background: url(img/list3.png);
+        	background-size: cover;
+        }
+            .listbody .img5{
+        	background: url(img/list4.png);
+        	background-size: cover;
+        }
+        .listimg{
+        	width: 2rem;
+        	height: 1.7rem;
+        	position: absolute;
+        	left: 0.1rem;
+        	top: 0.1rem;
+        	background: url(img/20407168_203509147000_2.jpg);
+        	background-size: cover;
+        }
+        .biaoti{
+        	font-size: 0.4rem;
+        	position: absolute;
+        	left: 2.4rem;
+        	top: 0;
+        	color: #000;
+        }
+        .neirong{
+        	font-size: 0.3rem;
+        	position: absolute;
+        	left: 2.4rem;
+        	top: 0.7rem;
+        	color: #808080;
+        }
+        .body1{
+        	display: none;
+        }
+body,ul,li,video {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	list-style: none;
+	height: 100%;
+}
+body {
+	font-size: 12px;
+	font-family: ubuntu, helvetica, arial;
+	overflow: hidden; /* this is important to prevent the whole page to bounce */
+}
+#footer{
+	width: 100%;
+	height: 1rem;
+	background: #E6E6E6;
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	box-shadow: 0px -2px 3px rgba(0,0,0,0.2);
+}
+
+#wrapper {
+	position: absolute;
+	top: 53px;
+	bottom: 48px;
+	left: 0;
+	width: 100%;
+	background: #ccc;
+
+}
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+#wrapper1 {
+	position: absolute;
+	top: 53px;
+	bottom: 48px;
+	left: 0;
+	width: 100%;
+	background: #ccc;
+
+}
+#scroller1 {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+#wrapper2 {
+	position: absolute;
+	top: 53px;
+	bottom: 48px;
+	left: 0;
+	width: 100%;
+	background: #ccc;
+
+}
+#scroller2 {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+#wrapper3 {
+	position: absolute;
+	top: 53px;
+	bottom: 48px;
+	left: 0;
+	width: 100%;
+	background: #ccc;
+
+}
+#scroller3 {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+#scroller>ul {
+	margin-top: 1.3rem;
+
+}
+
+/*.up{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    display: none;
+/*   margin-top: -60px;*/
+/*}*/
+#footer ul {
+	width: 100%;
+	height: 100%;
+	
+	}
+	#footer ul li{
+		width: 25%;
+		height: 100%;
+		text-align: center;
+		line-height: 0.8rem;
+		float: left;
+		position: relative;
+		display: block;
+	}
+
+	#footer ul li img{
+		width: 0.35rem;
+		margin-top: 0.2rem;
+		line-height: 1.2rem;
+	}
+	#footer ul li .wenzi{
+		position: absolute;
+		bottom: -0.2rem;
+		left: 0;
+		right: 0;
+		margin:auto;
+		color: #000;
+	}
+	
+	
+	/*slide2*/
+    .sousuo{
+    	width: 100%;
+    	height: 1rem;
+    	background: red;
+    	padding-left: 0.4rem;
+    	padding-top:0.2rem ;
+    	padding-bottom: 0.1rem;
+    	padding-right:0.4rem ;
+    	box-sizing: border-box;
+    	background: #fff;
+    }
+    /*.swiper-slide.active .sousuo{
+    	margin-top: 0rem;
+    }*/
+    .sousuo span{
+    	width: 10%;
+    	height: 100%;
+    	display: block;
+    	background: #fafafa;
+    	float: left;
+    	position: relative;
+    	border-top-left-radius: 0.1rem;
+    	border-bottom-left-radius: 0.1rem;
+    }
+    .sousuo span img{
+    	width: 0.35rem;
+        position: absolute;
+    	top: 0;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+    	margin: auto;
+    }
+    .sousuo input{
+    	display:block;
+    	float: left;
+    	width: 90%;
+    	height: 100%;
+    	border: 0;
+    	border-top-right-radius: 0.1rem;
+    	border-bottom-right-radius: 0.1rem;
+    	background: #fafafa;
+    	margin-left: -0.1rem;
+    }
+    .pic1{
+    	width: 100%;
+    }
+    .pic1 ul{
+    	width: 100%;
+    	padding: 0.3rem;
+    	padding-bottom: 0;
+    	padding-top: 0.1rem;
+    	background: #fff;
+    	box-sizing: border-box;
+    }
+    .pic1 ul li{
+    	width: 100%;
+    	/*height: 4rem;*/
+    	/*background: #000;*/
+    	margin-top: 0.2rem;
+    }
+  
+    .pic1 ul li p{
+    	border-top:0.01rem solid rgba(0,0,0,0.1) ;
+    	width: 100%;
+    	height: 0.7rem;
+    	font-size: 0.36rem;
+    	color: #000;
+    	    margin-bottom:0.1rem;
+    	line-height: 0.8rem;
+    }
+	
+</style>
+</head>
+<body onload="loaded()" onload="loaded1()" >
+
+
+
+<div class="mui-off-canvas-wrap mui-draggable">
+  <!-- 菜单容器 -->
+  <aside class="mui-off-canvas-left">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+      	<div class="xiangmu">
+		<ul>
+			<li class="dj"><span class="icon-xinwen1 iconfont"></span>新闻</li>
+			<li><span class="iconfont icon-weidingyue"></span>订阅</li>
+			<li><span class="iconfont icon-tupian"></span>图片</li>
+			<li><span class="iconfont icon-shipin"></span>视频</li>
+			<li><span class="iconfont icon-tubiao2yinlediantai"></span>电台</li>
+		</ul>
+	</div>
+      </div>
+    </div>
+  </aside>
+  <!-- 主页面容器 -->
+  <div class="mui-inner-wrap">
+    <!-- 主页面标题 -->
+    <div id="back" class="mui-content mui-scroll-wrapper ">
+    	<div class="body" style="opacity:1" >
+    	    <div class="top">
+	     				<div class="more iconfont icon-gengduo"></div>
+	     				<div >
+	     					<a href="" class="login iconfont icon-zhanghugaiyao"></a>
+	     				</div>
+	     				<div class="wy">
+	     					<img src="img/wy.png" alt="" />
+	     				</div>
+	     	</div>
+    	<div class="swiper-container" id="se">
+        		<div class="swiper-wrapper">
+        			<div id="btn1" class="swiper-slide  btn btn1">头条</div >
+        			<div id="btn1" class="swiper-slide btn1">科技</div >
+        			<div id="btn1"  class="swiper-slide btn1">娱乐</div >
+        			<div id="btn1"   class="swiper-slide btn1">体育</div >
+        		  <div  id="btn1"  class="swiper-slide btn1">推荐</div >
+        			<div  id="btn1"  class="swiper-slide btn1">搞笑</div >
+        			<div  id="btn1"  class="swiper-slide btn1">图片</div >
+        			<div  id="btn1"  class="swiper-slide btn1">视频</div >
+        			  			
+        		</div >	
+        </div>
+<div id="wrapper" >
+	<div id="scroller">
+		<ul>
+
+      <div class="swiper-container swiper" id="sw1">
+       <div class="swiper-wrapper">
+        <div class="swiper-slide active" >
+        	<div class="sw swiper-container">
+         <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="img/banner1.jpg" alt="" /></div>
+                   <div class="swiper-slide"><img src="img/banner2.jpg" alt="" /></div>
+                   <div class="swiper-slide"><img src="img/未标题-1.png" alt="" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        </div>
+         <div class="list">
+         	<ul>
+         		<li>		
+         		<div class="listbody">
+      				<a href="index11.html">
+      				<div class="listimg img1"></div>
+      			     <span class="biaoti">脸谱阅后积分用户下跌</span>
+      			     <p class="neirong">阅后积分一度上榜app story前100的免费应用</p>
+      			     </a>
+      			</div>
+         		</li>
+         		</a>
+         		<li>
+         			<div class="listbody">
+      				<a href="">
+      				<div class="listimg img2"></div>
+      			     <span class="biaoti">将构建新能源车快充网络</span>
+      			     <p class="neirong">中国政府网指导意见，明确发展以纯电动车伟主要战略</p>
+      			     </a>
+      			</div>
+         		</li>
+         		<li>
+         			<div class="listbody">
+      				<a href="">
+      				<div class="listimg img3"></div>
+      			     <span class="biaoti">诺基亚北京工人200人撤出</span>
+      			     <p class="neirong">上周五微软也启动诺基亚北京工场裁员计划，获将迁离北京</p>
+      			     </a>
+      			</div>
+         		</li>
+         		<li>
+         			<div class="listbody">
+      				<a href="">
+      				<div class="listimg img4"></div>
+      			     <span class="biaoti">供应商常年修改数据</span>
+      			     <p class="neirong">上周五微软也启动诺基亚北京工场裁员计划，获将迁离北京</p>
+      			     </a>
+      			</div>
+         		</li>
+         		<li>
+         			<div class="listbody">
+      				<a href="">
+      				<div class="listimg img6"></div>
+      			     <span class="biaoti"></span>
+      			     <p class="neirong"></p>
+      			     </a>
+      			</div>
+         		</li>
+         				<li>
+         			<div class="listbody">
+      				<a href="">
+      				<div class="listimg img6"></div>
+      			     <span class="biaoti"></span>
+      			     <p class="neirong"></p>
+      			     </a>
+      			</div>
+         		</li>
+         				<li>
+         			<div class="listbody">
+      				<a href="">
+      				<div class="listimg img6"></div>
+      			     <span class="biaoti"></span>
+      			     <p class="neirong"></p>
+      			     </a>
+      			</div>
+         		</li>
+         				<li>
+         			<div class="listbody">
+      				<a href="">
+      				<div class="listimg img6"></div>
+      			     <span class="biaoti"></span>
+      			     <p class="neirong"></p>
+      			     </a>
+      			</div>
+         		</li>
+         	</ul>
+         </div>
+         <!--<div style="width: 100%;height: 1rem;background: red;position: fixed;bottom:0;"></div>-->
+        </div>
+        <div class="swiper-slide active">
+        	<div class="sousuo">
+        		<span><img src="img/sousuo.png" alt="" /></span>
+        		<input type="text" placeholder="新闻搜索"/>
+        	</div>
+        	<div class="pic1">
+        		<ul>
+        			<li>
+        				<a href="index11.html">
+        				<p>脸谱阅后积分积分下降</p>
+        				<div><img src="img/list1.png" alt="" width="100%" height="80%"/></div>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="index11.html">
+        				<p>脸谱阅后积分积分下降</p>
+        				<div><img src="img/list2.png" alt="" width="100%" height="80%"/></div>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="index11.html">
+        				<p>脸谱阅后积分积分下降</p>
+        				<div><img src="img/list3.png" alt="" width="100%" height="80%"/></div>
+        				</a>
+        			</li>
+        			<li>
+        				<p>脸谱阅后积分积分下降</p>
+        				<div><img src="img/list4.png" alt="" width="100%" height="80%"/></div>
+        			</li>
+        			<li>
+        				<p>脸谱阅后积分积分下降</p>
+        				<div><img src="img/list1.png" alt="" width="100%" height="80%"/></div>
+        			</li>
+        		</ul>
+        	</div>
+        </div>
+        <div class="swiper-slide active">
+        	<div class="sousuo">
+        		<span><img src="img/sousuo.png" alt="" /></span>
+        		<input type="text" placeholder="新闻搜索"/>
+        	</div>
+        	<div class="ship">
+        		<ul>
+        			<li>
+        				<a href="spziangqing.html">
+        				<div class="video">
+        					<div class="concle"></div>
+        				</div>
+        				<div class="miaoshu">
+        					<div class="left">
+        						<span><img src="img/sp.png" alt="" /></span>
+        						<span class="mz">BangHo</span>
+        					</div>
+        					<div class="right">
+        						<span class="iconfont icon-pinglun"></span>
+        						<span class="icon-zhuanfa iconfont"></span>
+        					</div>
+        				</div>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="spziangqing.html">
+        				<div class="video">
+        					<div class="concle"></div>
+        				</div>
+        				<div class="miaoshu">
+        					<div class="left">
+        						<span><img src="img/sp.png" alt="" /></span>
+        						<span class="mz">BangHo</span>
+        					</div>
+        					<div class="right">
+        						<span class="iconfont icon-pinglun"></span>
+        						<span class="icon-zhuanfa iconfont"></span>
+        					</div>
+        				</div>
+        				</a>
+        			</li>
+        			<li>
+        				<div class="video">
+        					<div class="concle"></div>
+        				</div>
+        				<div class="miaoshu">
+        					<div class="left">
+        						<span><img src="img/sp.png" alt="" /></span>
+        						<span class="mz">BangHo</span>
+        					</div>
+        					<div class="right">
+        						<span class="iconfont icon-pinglun"></span>
+        						<span class="icon-zhuanfa iconfont"></span>
+        					</div>
+        				</div>
+        			</li>
+        			<li>
+        				<div class="video">
+        					<div class="concle"></div>
+        				</div>
+        				<div class="miaoshu">
+        					<div class="left">
+        						<span><img src="img/sp.png" alt="" /></span>
+        						<span class="mz">BangHo</span>
+        					</div>
+        					<div class="right">
+        						<span class="iconfont icon-pinglun"></span>
+        						<span class="icon-zhuanfa iconfont"></span>
+        					</div>
+        				</div>
+        			</li>
+        			<li>
+        				<div class="video">
+        					<div class="concle"></div>
+        				</div>
+        				<div class="miaoshu">
+        					<div class="left">
+        						<span><img src="img/sp.png" alt="" /></span>
+        						<span class="mz">BangHo</span>
+        					</div>
+        					<div class="right">
+        						<span class="iconfont icon-pinglun"></span>
+        						<span class="icon-zhuanfa iconfont"></span>
+        					</div>
+        				</div>
+        			</li>
+        			<li>
+        				<div class="video">
+        					<div class="concle"></div>
+        				</div>
+        				<div class="miaoshu">
+        					<div class="left">
+        						<span><img src="img/sp.png" alt="" /></span>
+        						<span class="mz">BangHo</span>
+        					</div>
+        					<div class="right">
+        						<span class="iconfont icon-pinglun"></span>
+        						<span class="icon-zhuanfa iconfont"></span>
+        					</div>
+        				</div>
+        			</li>
+        		</ul>
+        	</div>
+        </div>
+          <div class="swiper-slide active">
+          	<div class="sousuo">
+        		<span><img src="img/sousuo.png" alt="" /></span>
+        		<input type="text" placeholder="新闻搜索"/>
+        	</div>
+        	<div class="pe">
+        		<a href="spziangqing.html">
+        		<div class="petop">
+        			<img src="img/pe1.jpg" alt="" />
+        		</div>
+        		</a>
+        		<div class="list1">
+        			<ul>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="index11.html">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/gd.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">广东男篮</span>
+      			     <p class="neirong">广东19分大胜同曦获12连胜，阿联三姐砍21+11</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/yc.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">英超联赛</span>
+      			     <p class="neirong">3：45起视频世博8场英超 切尔西冲10连胜</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/linshuhao.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">NBA直播</span>
+      			     <p class="neirong">nba-8:00起视频直播10场比赛 林书豪再战老东家</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/shijubei.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">世俱杯</span>
+      			     <p class="neirong">历史首次！世俱杯通过视频回放点球放‘补球，鹿岛受益’</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody">
+        						<img src="img/ymq.jpg" alt="" / class="ymq">
+        						<img src="img/ymq2.jpg" alt="" / class="ymq" style="margin-left: 0.2rem;">
+        						<img src="img/ymq3.jpg" alt="" / class="ymq" style="margin-left: 0.2rem;">
+        					</div>
+        				</li>
+        				<li></li>
+        				<li></li>
+        			</ul>
+        		</div>
+        	</div>
+          	
+          </div>
+        <div class="swiper-slide active">
+        	<div class="sousuo">
+        		<span><img src="img/sousuo.png" alt="" /></span>
+        		<input type="text" placeholder="新闻搜索"/>
+        	</div>
+        	<div class="pe">
+        		<div class="petop">
+        			<img src="img/yundong.jpg" alt="" />
+        		</div>
+        		<div class="list1">
+        			<ul>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/gd.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">广东男篮</span>
+      			     <p class="neirong">广东19分大胜同曦获12连胜，阿联三姐砍21+11</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/yc.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">英超联赛</span>
+      			     <p class="neirong">3：45起视频世博8场英超 切尔西冲10连胜</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/linshuhao.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">NBA直播</span>
+      			     <p class="neirong">nba-8:00起视频直播10场比赛 林书豪再战老东家</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/shijubei.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">世俱杯</span>
+      			     <p class="neirong">历史首次！世俱杯通过视频回放点球放‘补球，鹿岛受益’</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody">
+        						<img src="img/ymq.jpg" alt="" / class="ymq">
+        						<img src="img/ymq2.jpg" alt="" / class="ymq" style="margin-left: 0.2rem;">
+        						<img src="img/ymq3.jpg" alt="" / class="ymq" style="margin-left: 0.2rem;">
+        					</div>
+        				</li>
+        				<li></li>
+        				<li></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+        <div class="swiper-slide active">
+        	<div class="sousuo">
+        		<span><img src="img/sousuo.png" alt="" /></span>
+        		<input type="text" placeholder="新闻搜索"/>
+        	</div>
+        	<div class="pe">
+        		<div class="petop">
+        			<img src="img/tiaoshan.jpg" alt="" />
+        		</div>
+        		 <div class="sange">
+        		 	<ul>
+        		 		<li><img src="img/5.png" alt="" /></li>
+        		 		<li><img src="img/6.png" alt="" /></li>
+        		 		<li><img src="img/7.png" alt="" /></li>
+        		 	</ul>
+        		 </div>
+        		 <div class="list1">
+        			<ul>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				</ul>
+        		</div>		
+        	</div>
+        </div>
+          <div class="swiper-slide active">
+          	<div class="sousuo">
+        		<span><img src="img/sousuo.png" alt="" /></span>
+        		<input type="text" placeholder="新闻搜索"/>
+        	</div>
+        	<div class="pe">
+        		<div class="petop">
+        			<img src="img/tiaoshan.jpg" alt="" />
+        		</div>
+        		<div class="list1">
+        			<ul>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/gd.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">广东男篮</span>
+      			     <p class="neirong">广东19分大胜同曦获12连胜，阿联三姐砍21+11</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/yc.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">英超联赛</span>
+      			     <p class="neirong">3：45起视频世博8场英超 切尔西冲10连胜</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/linshuhao.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">NBA直播</span>
+      			     <p class="neirong">nba-8:00起视频直播10场比赛 林书豪再战老东家</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/shijubei.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">世俱杯</span>
+      			     <p class="neirong">历史首次！世俱杯通过视频回放点球放‘补球，鹿岛受益’</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody">
+        						<img src="img/ymq.jpg" alt="" / class="ymq">
+        						<img src="img/ymq2.jpg" alt="" / class="ymq" style="margin-left: 0.2rem;">
+        						<img src="img/ymq3.jpg" alt="" / class="ymq" style="margin-left: 0.2rem;">
+        					</div>
+        				</li>
+        				<li></li>
+        				<li></li>
+        			</ul>
+        		</div>
+        	</div>
+          </div>
+        <div class="swiper-slide active">
+        	<div class="sousuo">
+        		<span><img src="img/sousuo.png" alt="" /></span>
+        		<input type="text" placeholder="新闻搜索"/>
+        	</div>
+        	<div class="pe">
+        		<div class="petop">
+        			<img src="img/gaoshou.jpg" alt="" />
+        		</div>
+        		<div class="list1">
+        			<ul>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/bj.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">北京男篮</span>
+      			     <p class="neirong">换不换三冠功勋外援？北京面临情感显示两难选择</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/gd.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">广东男篮</span>
+      			     <p class="neirong">广东19分大胜同曦获12连胜，阿联三姐砍21+11</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/yc.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">英超联赛</span>
+      			     <p class="neirong">3：45起视频世博8场英超 切尔西冲10连胜</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/linshuhao.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">NBA直播</span>
+      			     <p class="neirong">nba-8:00起视频直播10场比赛 林书豪再战老东家</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody listbody1">
+      				<a href="">
+      				<div class="listimg">
+      					<img src="img/shijubei.jpg" alt="" />
+      				</div>
+      			     <span class="biaoti">世俱杯</span>
+      			     <p class="neirong">历史首次！世俱杯通过视频回放点球放‘补球，鹿岛受益’</p>
+      			     </a>
+      			</div>
+        				</li>
+        				<li>
+        					<div class="listbody">
+        						<img src="img/ymq.jpg" alt="" / class="ymq">
+        						<img src="img/ymq2.jpg" alt="" / class="ymq" style="margin-left: 0.2rem;">
+        						<img src="img/ymq3.jpg" alt="" / class="ymq" style="margin-left: 0.2rem;">
+        					</div>
+        				</li>
+        				<li></li>
+        				<li></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+          
+    
+    </div>
+     </div>
+  
+     </ul>
+</div>
+	</div>
+	
+
+<div id="footer">
+		<ul>
+			<li class="fot">
+				<span class=""><img src="img/xinwen.png" alt="" /></span>
+				<a class="wenzi">新闻</a>
+			</li>
+			<li class="fot">
+				<span class=""><img src="img/pic.png" alt="" /></span>
+				<a class="wenzi">图片</a>
+			</li>
+			<li class="fot">
+				<psan class=""><img src="img/shiping.png" alt="" /></psan>
+				<a class="wenzi">视频</a>
+			</li>
+			<li class=" fotlogin">
+				<psan class=""><img src="img/erji.png" alt="" /></psan>
+				<a class="wenzi">电台</a>
+			</li>
+		</ul>
+	</div>
+	</div>
+	<div class="body  " style="background:red;" >
+		<div class="top1">
+			<div class="tuijian">直播</div>
+			<div class="sousuo1">
+				<img src="img/sousuo.png" alt="" />
+			</div>
+		</div>
+		<div id="wrapper1" >
+	      <div id="scroller1">
+	      	
+	      		<div class="list1">
+	      			<ul>
+	      				<li class="zhibo">
+	      					<div class="concle"></div>
+	      					<span class="jieshao">黄子韬直播互动，粉丝亲密接触</span>
+	      					<img src="img/zhibo1.jpg" alt="" />
+	      				</li>
+	      				<li class="zhibo">
+	      					<span class="jieshao">黄子韬直播互动，粉丝亲密接触</span>
+	      					<div class="concle"></div>
+	      					<img src="img/zhibo2.jpg" alt="" />
+	      				</li>
+	      				<li class="zhibo">
+	      					<span class="jieshao">黄子韬直播互动，粉丝亲密接触</span>
+	      					<div class="concle"></div>
+	      					<img src="img/zhibo3.jpg" alt="" />
+	      				</li>
+	      					<li class="zhibo">
+	      						<span class="jieshao">黄子韬直播互动，粉丝亲密接触</span>
+	      						<div class="concle"></div>
+	      					<img src="img/zhibo4.jpg" alt="" />
+	      				</li>
+	      					<li class="zhibo">
+	      						<span class="jieshao">黄子韬直播互动，粉丝亲密接触</span>
+	      						<div class="concle"></div>
+	      					<img src="img/zhibo5.jpg" alt="" />
+	      				</li>
+	      					<li class="zhibo">
+	      						<span class="jieshao">黄子韬直播互动，粉丝亲密接触</span>
+	      						<div class="concle"></div>
+	      					<img src="img/zhibo1.jpg" alt="" />
+	      				</li>
+	      			</ul>
+	      		</div>
+	      	
+	      	</div>
+	      </div>
+<div id="footer">
+		<ul>
+			<li class="fot">
+				<span class=""><img src="img/xinwen.png" alt="" /></span>
+				<a class="wenzi">新闻</a>
+			</li>
+			<li class="fot">
+				<span class=""><img src="img/pic.png" alt="" /></span>
+				<a class="wenzi">图片</a>
+			</li>
+			<li class="fot">
+				<psan class=""><img src="img/shiping.png" alt="" /></psan>
+				<a class="wenzi">视频</a>
+			</li>
+			<li class=" fotlogin">
+				<a href="login.html">
+				<psan class=""><img src="img/erji.png" alt="" /></psan>
+				<a class="wenzi">我</a>
+				</a>
+			</li>
+		</ul>
+	</div>
+	      
+	</div>
+	
+	<div class="body " style="background:blue">
+		<div class="top1">
+			<div class="tuijian">推荐</div>
+			<div class="sousuo1">
+				<img src="img/sousuo.png" alt="" />
+			</div>
+		</div>
+		<div id="wrapper3" >
+	      <div id="scroller3">
+	      	
+	      		<div class="list1">
+	      			<ul>
+	      				<li>
+	      					<div class="listbody">
+      				<a href="">
+      				<div class="listimg img4"></div>
+      			     <span class="biaoti">供应商常年修改数据</span>
+      			     <p class="neirong">上周五微软也启动诺基亚北京工场裁员计划，获将迁离北京</p>
+      			     </a>
+      			</div>
+	      				</li>
+	      					<li>
+	      					<div class="listbody">
+      				<a href="">
+      				<div class="listimg img4"></div>
+      			     <span class="biaoti">供应商常年修改数据</span>
+      			     <p class="neirong">上周五微软也启动诺基亚北京工场裁员计划，获将迁离北京</p>
+      			     </a>
+      			</div>
+	      				</li>
+	      					<li>
+	      					<div class="listbody">
+      				<a href="">
+      				<div class="listimg img4"></div>
+      			     <span class="biaoti">供应商常年修改数据</span>
+      			     <p class="neirong">上周五微软也启动诺基亚北京工场裁员计划，获将迁离北京</p>
+      			     </a>
+      			</div>
+	      				</li>
+	      					<li>
+	      					<div class="listbody">
+      				<a href="">
+      				<div class="listimg img4"></div>
+      			     <span class="biaoti">供应商常年修改数据</span>
+      			     <p class="neirong">上周五微软也启动诺基亚北京工场裁员计划，获将迁离北京</p>
+      			     </a>
+      			</div>
+	      				</li>
+	      					<li>
+	      					<div class="listbody">
+      				<a href="">
+      				<div class="listimg img4"></div>
+      			     <span class="biaoti">供应商常年修改数据</span>
+      			     <p class="neirong">上周五微软也启动诺基亚北京工场裁员计划，获将迁离北京</p>
+      			     </a>
+      			</div>
+	      				</li>
+	      					<li>
+	      					<div class="listbody">
+      				<a href="">
+      				<div class="listimg img4"></div>
+      			     <span class="biaoti">供应商常年修改数据</span>
+      			     <p class="neirong">上周五微软也启动诺基亚北京工场裁员计划，获将迁离北京</p>
+      			     </a>
+      			</div>
+	      				</li>
+	      			</ul>
+	      		</div>
+	      	
+	      	</div>
+	      </div>
+<div id="footer">
+		<ul>
+			<li class="fot">
+				<span class=""><img src="img/xinwen.png" alt="" /></span>
+				<a class="wenzi">新闻</a>
+			</li>
+			<li class="fot">
+				<span class=""><img src="img/pic.png" alt="" /></span>
+				<a class="wenzi">图片</a>
+			</li>
+			<li class="fot">
+				<psan class=""><img src="img/shiping.png" alt="" /></psan>
+				<a class="wenzi">视频</a>
+			</li>
+			<li class=" fotlogin">
+				<a href="">
+				<psan class=""><img src="img/erji.png" alt="" /></psan>
+				<a class="wenzi">电台</a>
+				</a>
+			</li>
+		</ul>
+	</div>
+	</div>
+	<div class="body" ></div>
+      </div>
+    </div>  
+  </div>
+  
+</body>
+<script>
+
+mui.init()
+ resize(750);
+     var mySwiper1 = new Swiper('.swiper',{
+	    	onSlideChangeStart: function(){
+			updateNavPosition()
+		},
+//		onSlideChangeEnd: function(swiper){
+//			var index=swiper.activeIndex
+////	        alert(index)
+//				 $("#sw1 .swiper-wrapper .swiper-slide").addclass("1")
+//			
+////			
+//   //切换结束时，告诉我现在是第几个slide
+//  }
+	
+//		onSlideChangeStart: function() {
+//var H = $("#sw1").eq(mySwiper1.activeIndex).height();
+//$(".swiper-slide").css('height', H + 'px');
+//$(".swiper-wrapper").css('height', H + 'px');
+//}
+	    })
+     $(".swiper .swiper-wrapper").height("auto");
+     	var mySwiper2 = new Swiper('.sw',{
+     		pagination: '.swiper-pagination',
+     	})
+var mySwiper3 = new Swiper('#se',{
+       freeMode:true,
+        slidesPerView :'auto',
+        watchSlidesProgress : true,
+   watchSlidesVisibility : true,
+     nTap: function(){
+			mySwiper1.slideTo( mySwiper3.clickedIndex)
+	}
+
+})
+	  $("#se .swiper-slide").click(function(e){
+    e.preventDefault()
+})
+
+	
+function updateNavPosition(){
+		$('#se .btn').removeClass('btn')
+		var activeNav = $('#se .swiper-slide').eq(mySwiper1.activeIndex).addClass('btn');
+
+
+		if (!activeNav.hasClass('swiper-slide-visible')) {
+
+			if (activeNav.index()>mySwiper2.activeIndex) {
+
+				var thumbsPerNav = Math.floor(mySwiper3.width/activeNav.width())-1
+				mySwiper3.slideTo(activeNav.index()-thumbsPerNav)
+			}
+			else {
+
+				mySwiper3.slideTo(activeNav.index())
+			}	
+		}
+}
+
+
+var more=document.getElementsByClassName('login')[0];
+more.addEventListener('tap',function(){
+	window.location.href="login.html";
+})
+
+var btn=document.getElementsByClassName('btn1');
+for(var i=0;i<=btn.length;i++){
+	btn[i].addEventListener('tap',function(){
+		var index=$(this).index();
+mySwiper1.slideTo(index, 400, function(){
+	$(this).addClass("btn").siblings().removeClass("btn")
+});
+	})
+}
+	
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title></title>
+<script type="text/javascript">
+    	function resize(originSize,type){
+    var type=type||"x";
+    if(type=="x"){
+    var widths=document.documentElement.clientWidth;
+    var scale=widths/originSize*100;
+    }else if(type=="y"){
+    var heights=document.documentElement.clientHeight;
+    var scale=heights/originSize*100;
+    }
+
+    document.getElementsByTagName("html")[0].style.fontSize=scale+"px"
+    }
+   	
+   		
+    </script>
+    <script src="js/jquery-3.1.0.js"></script>
+    <style>
+    html,body{
+    	width: 100%;
+    	height: 100%;
+    	padding: 0;
+    	margin: 0;
+    	list-style:none;
+    	overflow: hidden;
+    	background: #000;
+    	         font-family:Helvetica;
+          -webkit-text-size-adjust:100%;
+          -webkit-user-select:none;
+    }
+    *{
+    	padding: 0;
+    	margin: 0;
+    	list-style:none;
+    	text-decoration: none;
+    }
+    	.box{
+    	    width:100%;
+    	    height:100%;
+    	    background: url(img/sss.png)no-repeat center center;
+    	    background-size:cover;
+    	}
+    	.tiao{
+    		width: 1rem;
+    		height: 0.35rem;
+    		background: rgba(0,0,0,0.7);
+    		border-radius: 0.05rem;
+    		font-size: 0.2rem;
+    		position: absolute;
+    		top: 0.2rem;
+    		right: 0.2rem;
+    		text-align: center;
+    		line-height: 0.35rem;
+    	}
+    	.tiao a{
+    		display: block;
+    		width: 100%;
+    		height: 100%;
+    		color: #fff;
+    		font-family:黑体;
+    	}
+    	
+    </style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="tiao">
+		<a href="index1.html">跳过广告</a>
+	</div>
+</body>
+<script>
+	resize(750,"y");
+$('a').click(function(){
+    var href = $(this).attr('href');
+    if(!href || /^(javascript:)|#/.test(href)) return;
+    window.location.href = href;
+    loading();
+    return false;
+ });
+
+function loading() {
+    $('body').append('加载中效果');
+}
+</script>
+</html>
+
+
+
+
+ <!--<div class="sw swiper-container">
+         <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="img/banner1.jpg" alt="" /></div>
+                   <div class="swiper-slide"><img src="img/banner2.jpg" alt="" /></div>
+                   <div class="swiper-slide"><img src="img/未标题-1.png" alt="" /></div>
+        </div>
+        </div>-->

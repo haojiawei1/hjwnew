@@ -1,0 +1,25 @@
+
+.pe{
+	width: 100%;
+	padding:0.2rem ;
+	box-sizing: border-box;
+	background: #fff;
+}
+.petop{
+	width: 100%;
+	height: 4rem;
+	background: red;
+}
+.petop img{
+	width: 100%;
+	height: 100%;
+}
+.list1 .listbody1{
+	width: 100%;
+	height: 2.1rem;
+}
+.list1 ul li .ymq{
+	width: 30%;
+	line-height: 100%;
+	margin-left: 0.1rem;
+}
